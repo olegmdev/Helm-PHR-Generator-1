@@ -4,27 +4,6 @@ const process = require('process');
 const mkdirp = require('mkdirp');
 
 module.exports = {
-
-    /**
-     * This function clones Core project from GitHub
-     *
-     * @param el
-     * @return {boolean}
-     */
-    cloneCoreProject: function(el) {
-      console.log(yosay(`${chalk.yellow('Step 1:')} Now we are clonning ${chalk.green('PulseTile-Core')} from GitHub...`));
-      el.spawnCommandSync(
-        'git',
-        [
-            'clone',
-            '-b',
-            'feature-container-empty',
-            'https://github.com/BogdanScherban/PulseTile-React.git'
-        ]
-      );
-      return true;
-    },
-
     /**
      * This function updates Node modules of Core
      *

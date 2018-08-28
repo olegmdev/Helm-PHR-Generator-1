@@ -4,6 +4,7 @@ import <%= item.import %> from '<%= item.pluginDirectory %>';
 import { <%= item.imageImport %> } from '<%= item.imageSource %>';
 <% } %>
 
+
 /**
  * The list of none-core plugins which are included to the current theme
  *

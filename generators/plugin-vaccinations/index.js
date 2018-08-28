@@ -3,12 +3,12 @@ const Generator = require('yeoman-generator');
 const chalk = require('chalk');
 const yosay = require('yosay');
 
-const functions = require('./functions');
+const commonFunctions = require('../../common/functions');
 
 module.exports = class extends Generator {
 
   prompting() {
-    this.log(yosay(`Welcome to ${chalk.red('generator-pulsetile-plugins-react-vaccinations')} generator!`));
+    this.log(yosay(`Welcome to ${chalk.red('Silver-Plugin-Vaccinations')} generator!`));
     const prompts = [{
       type: 'confirm',
       name: 'someAnswer',
@@ -22,17 +22,28 @@ module.exports = class extends Generator {
 
   writing() {
     try {
-      functions.cloneProject(this);
-      functions.renamePluginDirectory();
-      functions.updateConfigFiles(this);
+
+      commonFunctions.goToPluginsDirectory();
+
+      commonFunctions.cloneProject(
+        this,
+        'Vaccinations plugin',
+        'master',
+        'https://github.com/BogdanScherban/Silver-Plugin-Vaccinations'
+      );
+
+      commonFunctions.renamePluginDirectory(
+        'Silver-Plugin-Vaccinations',
+        'Vaccinations'
+      );
+
+      commonFunctions.updateConfigFiles(this);
+
+      console.log(yosay(`Congradulations!!! ${chalk.green('Vaccinations plugin')} was added successfully!!!`));
+
     } catch (err) {
       console.log(yosay(`${chalk.green('ERROR: ')} ${err}`));
-      console.error(`ERROR: ${err}`);
+      console.log(yosay(`Please, remove plugin directory ${chalk.green('Vaccinations')} and repeat installing.`));
     }
-  }
-
-  end() {
-    console.log(yosay(`Congradulations!!! ${chalk.green('Vaccinations plugin')} was added successfully!!!`));
-    console.log(yosay(`If you want to build the project run: ${chalk.green('npm run build')}`));
   }
 };

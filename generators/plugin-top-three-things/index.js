@@ -3,13 +3,13 @@ const Generator = require('yeoman-generator');
 const chalk = require('chalk');
 const yosay = require('yosay');
 
-const functions = require('./functions');
+const commonFunctions = require('../../common/functions');
 
 module.exports = class extends Generator {
   prompting() {
 
     this.log(
-      yosay(`Welcome to the ${chalk.red('generator-pulsetile-plugins-react-topthreethings')} generator!`)
+      yosay(`Welcome to the ${chalk.red('Silver-Plugin-TopThreeThings')} generator!`)
     );
 
     const prompts = [
@@ -29,16 +29,28 @@ module.exports = class extends Generator {
 
   writing() {
     try {
-      functions.cloneProject(this);
-      functions.renamePluginDirectory();
-      functions.updateConfigFiles(this);
+
+      commonFunctions.goToPluginsDirectory();
+
+      commonFunctions.cloneProject(
+        this,
+        'TopThreeThings plugin',
+        'master',
+        'https://github.com/BogdanScherban/Silver-Plugin-TopThreeThings'
+      );
+
+      commonFunctions.renamePluginDirectory(
+        'Silver-Plugin-TopThreeThings',
+        'TopThreeThings'
+      );
+
+      commonFunctions.updateConfigFiles(this);
+
+      console.log(yosay(`Congradulations!!! ${chalk.green('TopThreeThings plugin')} was added successfully!!!`));
+
     } catch (err) {
       console.log(yosay(`${chalk.green('ERROR: ')} ${err}`));
-      console.error(`ERROR: ${err}`);
+      console.log(yosay(`Please, remove plugin directory ${chalk.green('TopThreeThings')} and repeat installing.`));
     }
-  }
-
-  end() {
-    console.log(yosay(`Congradulations!!! ${chalk.green('TopThreeThings plugin')} was added successfully!!!`));
   }
 };

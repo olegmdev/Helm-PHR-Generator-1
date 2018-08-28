@@ -8,28 +8,6 @@ const rimraf = require('rimraf');
 const pluginsConfig = require('./pluginsConfig');
 
 module.exports = {
-  
-  /**
-   * This function clones TopThreeThings plugin from GitHub
-   *
-   * @param el
-   * @return {boolean}
-   */
-  cloneProject: function(el) {
-    console.log(yosay(`${chalk.yellow('Step 1:')} Clonning ${chalk.green('HelpPHR-theme plugin')} from GitHub...`));
-    const themeDirectoryPath = 'PulseTile-React/src/components/theme/plugins';
-    process.chdir(themeDirectoryPath);
-    el.spawnCommandSync(
-      'git',
-      [
-        'clone',
-        '-b',
-        'master',
-        'https://github.com/BogdanScherban/Plugin-Helm-PHR-Theme'
-      ]
-    );
-    return true;
-  },
 
   /**
    * This function adds importing of theme to main CSS file

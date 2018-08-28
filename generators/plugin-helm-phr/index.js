@@ -8,6 +8,7 @@ var mkdirp = require('mkdirp');
 var rmdir = require('rmdir');
 
 const functions = require('./functions');
+const commonFunctions = require('../../common/functions');
 
 module.exports = class extends Generator {
 
@@ -28,7 +29,16 @@ module.exports = class extends Generator {
 
   writing() {
     try {
-      functions.cloneProject(this);
+
+      commonFunctions.goToPluginsDirectory();
+
+      commonFunctions.cloneProject(
+        this,
+        'HelmPHR-theme plugin',
+        'master',
+        'https://github.com/BogdanScherban/Plugin-Helm-PHR-Theme'
+      );
+
       functions.relocateContent();
       functions.importThemeStyles();
       functions.switchHelmTheme(this);
@@ -36,14 +46,13 @@ module.exports = class extends Generator {
       functions.changeBanners(this);
       functions.changePrevImages(this);
       functions.removeThemeDirectory();
+
+      console.log(yosay(`Congradulations!!! ${chalk.green('HelpPHR-theme plugin')} was added successfully!!!`));
+      console.log(yosay(`If you want to build the project run: ${chalk.green('npm run build')}`));
+
     } catch (err) {
       console.log(yosay(`${chalk.green('ERROR: ')} ${err}`));
-      console.error(`ERROR: ${err}`);
+      console.log(yosay(`Please, remove plugin directory ${chalk.green('Plugin-Helm-PHR-Theme')} and repeat installing.`));
     }
-  }
-
-  end() {
-    console.log(yosay(`Congradulations!!! ${chalk.green('HelpPHR-theme plugin')} was added successfully!!!`));
-    console.log(yosay(`If you want to build the project run: ${chalk.green('npm run build')}`));
   }
 };

@@ -2,7 +2,9 @@
 const Generator = require('yeoman-generator');
 const yosay = require('yosay');
 const chalk = require('chalk');
+
 const functions = require('./functions');
+const commonFunctions = require('../../common/functions');
 
 module.exports = class extends Generator {
 
@@ -14,7 +16,7 @@ module.exports = class extends Generator {
   prompting() {
 
     this.log(
-      yosay(`Welcome to the sensational ${chalk.green('generator-pulsetile-core')} generator!`)
+      yosay(`Welcome to ${chalk.green('PulseTile-Core')} generator!`)
     );
 
     const prompts = [
@@ -33,17 +35,22 @@ module.exports = class extends Generator {
 
   writing() {
     try {
-      functions.cloneCoreProject(this);
+
+      commonFunctions.cloneProject(
+        this,
+        'PulseTile-Core',
+        'feature-container-empty',
+        'https://github.com/BogdanScherban/PulseTile-React.git'
+      );
+
       functions.updateNpmModules(this);
       functions.createPluginsDirectory();
+
+      console.log(yosay(`Congradulations!!! ${chalk.green('PulseTile-Core')} was installed successfully!!!`));
+
     } catch (err) {
       console.log(yosay(`${chalk.green('ERROR: ')} ${err}`));
-      console.error(`ERROR: ${err}`);
+      console.log(yosay(`Please, remove project directory and repeat installing.`));
     }
-  }
-
-  end() {
-      console.log(yosay(`Congradulations!!! ${chalk.green('PulseTile-Core')} was installed successfully!!!`));
-      console.log(yosay(`If you want to build the project run: ${chalk.green('npm run build')}`));
   }
 };
