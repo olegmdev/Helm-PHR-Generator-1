@@ -1,0 +1,22 @@
+export const themeConfigs = {
+    isLeedsPHRTheme: true,
+    isLeedsPHRHeaderList: true,
+    headerHasSearch: false,
+    footerHasShowSupportedByText: false,
+    footerCopyright: 'Copyright 2017 Ripple Foundation CIC Ltd. All rights reserved',
+    isShowPluginsBigBanner: true,
+    patientsSummaryPageName: 'Home',
+    patientsSummaryHasPreviewSettings: true,
+    sidebarConfigIsVisible: {
+        default: false,
+        'patients-summary': true,
+        'diagnoses': true,
+        'medications': true,
+        'allergies': true,
+        'contacts': true,
+        'vaccinations': true,
+        'topThreeThings': true,
+    },
+    dashboardBeing: {},
+    isShowUserProfileSettings: true,
+};
