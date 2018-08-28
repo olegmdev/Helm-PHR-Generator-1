@@ -3,11 +3,13 @@ const Generator = require('yeoman-generator');
 const chalk = require('chalk');
 const yosay = require('yosay');
 
+const functions = require('./functions');
+
 module.exports = class extends Generator {
   prompting() {
-    // Have Yeoman greet the user.
+
     this.log(
-      yosay(`Welcome to the sensational ${chalk.red('generator-helm-phr')} generator!`)
+      yosay(`Welcome to the ${chalk.red('generator-pulsetile-plugins-react-topthreethings')} generator!`)
     );
 
     const prompts = [
@@ -26,13 +28,17 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    this.fs.copy(
-      this.templatePath('dummyfile.txt'),
-      this.destinationPath('dummyfile.txt')
-    );
+    try {
+      functions.cloneProject(this);
+      functions.renamePluginDirectory();
+      functions.updateConfigFiles(this);
+    } catch (err) {
+      console.log(yosay(`${chalk.green('ERROR: ')} ${err}`));
+      console.error(`ERROR: ${err}`);
+    }
   }
 
-  install() {
-    this.installDependencies();
+  end() {
+    console.log(yosay(`Congradulations!!! ${chalk.green('TopThreeThings plugin')} was added successfully!!!`));
   }
 };
