@@ -36,7 +36,7 @@ module.exports = class extends Generator {
         this,
         'TopThreeThings plugin',
         'master',
-        'https://github.com/BogdanScherban/Silver-Plugin-TopThreeThings'
+        'https://github.com/PulseTile-Plugins/Silver-Plugin-TopThreeThings'
       );
 
       commonFunctions.renamePluginDirectory(

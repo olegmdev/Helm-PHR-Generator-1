@@ -16,7 +16,7 @@ module.exports = {
      *
      */
     goToPluginsDirectory: function() {
-        const themeDirectoryPath = 'PulseTile-React/src/components/theme/plugins';
+        const themeDirectoryPath = 'PulseTile-React-Core/src/components/theme/plugins';
         process.chdir(themeDirectoryPath);
         return true;
     },

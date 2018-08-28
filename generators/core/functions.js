@@ -12,7 +12,7 @@ module.exports = {
      */
     updateNpmModules: function(el) {
       console.log(yosay(`${chalk.yellow('Step 2:')} Now we are updating NPM-modules`));
-      process.chdir('PulseTile-React');
+      process.chdir('PulseTile-React-Core');
       el.spawnCommandSync('npm', ['install']);
       return true;
     },
