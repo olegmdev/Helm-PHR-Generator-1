@@ -52,11 +52,26 @@ This sub-generator does the following automatically:
  
 If any errors occur during generator work you should remove project directory and repeat generator command.
 
+# Environment
+
+Before installing the Generator, you will need the following:
+- Node.js 6 or higher
+- npm 3 or higher (which comes bundled with Node)
+- Git
+
+You can check current version by:
+```
+    $ node --version
+    $ npm --version
+    $ git --version
+```
+
 # Installing
 
 Install Yeoman tool at you local machine if it is absent there:
 ```
     $ npm install -g yo
+    $ npm install -g helm-phr
 ```
 
 Go to the directory, where you will create your build, for example:
