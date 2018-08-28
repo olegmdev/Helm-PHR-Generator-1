@@ -1,7 +1,7 @@
 {
   "name": "generator-helm-phr",
-  "version": "0.0.0",
-  "description": "HelmPHR-version generator",
+  "version": "1.0.2",
+  "description": "Generator for automatic creating HelmPHR-version",
   "homepage": "",
   "author": {
     "name": "bogdan_scher",
@@ -9,7 +9,8 @@
     "url": ""
   },
   "files": [
-    "generators"
+    "generators",
+    "common"
   ],
   "main": "generators/index.js",
   "keywords": [
@@ -80,6 +81,9 @@
       "prettier"
     ]
   },
-  "repository": "BogdanScherban/generator-helm-phr",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RippleOSI/Helm-PHR-Generator"
+  },
   "license": "Apache-2.0"
 }
