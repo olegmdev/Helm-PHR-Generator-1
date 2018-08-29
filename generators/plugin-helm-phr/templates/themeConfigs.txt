@@ -1,5 +1,11 @@
 export const themeConfigs = {
   isLeedsPHRTheme: true,
+  topHeader: {
+    showNotifications: false,
+    showQuestions: true,
+    showSearch: false,
+    showUserPanel: true,
+  },
   isLeedsPHRHeaderList: true,
   headerHasSearch: false,
   footerHasShowSupportedByText: false,
@@ -18,7 +24,9 @@ export const themeConfigs = {
     'topThreeThings': true,
   },
   dashboardBeing: {},
-  isShowUserProfileSettings: true,
+  isShowUserPhoto: false,
+  isShowUserProfileSettings: false,
+  isShowUserProfileSpecification: false,
   patientsSummaryTitles: {
     'diagnoses': 'Problems / Issues',
     'medications': 'Medications',
