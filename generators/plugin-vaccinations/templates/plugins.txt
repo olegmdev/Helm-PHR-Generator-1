@@ -1,7 +1,12 @@
+import { get } from 'lodash';
+import { themeConfigs } from '../../../themes.config';
+
 <% for (i = 0; i < plugins.length; i++) { %>
 <% item = plugins[i] %>
 import <%= item.import %> from '<%= item.pluginDirectory %>';
 import { <%= item.imageImport %> } from '<%= item.imageSource %>';
+
+const <%= item.getTitle %> = get(themeConfigs.patientsSummaryTitles, '<%= item.import %>', '<%= item.title %>');
 <% } %>
 
 
@@ -27,7 +32,7 @@ export const themePluginsPages = {
 <% item = plugins[i] %>
     '<%= item.url %>': {
             breadcrumbs: [{
-                title: '<%= item.title %>',
+                title: <%= item.getTitle %>,
                 state: '/<%= item.url %>',
             }],
         },

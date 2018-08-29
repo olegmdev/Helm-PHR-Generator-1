@@ -5,7 +5,8 @@ module.exports = {
             url: 'topThreeThings'
         },
         plugins: {
-            title: 'Top 3 Things',
+            getTitle: 'topThreeThingsTitle',
+            title: 'Top Three Things',
             url: 'topThreeThings',
             import: 'topThreeThings',
             pluginDirectory: '../plugins/TopThreeThings/index',
@@ -30,6 +31,7 @@ module.exports = {
     'Vaccinations' : {
         clientsUrl : { name: 'VACCINATIONS', url: 'vaccinations' },
         plugins: {
+            getTitle: 'vaccinationsTitle',
             title: 'Vaccinations',
             url: 'vaccinations',
             import: 'vaccinations',
