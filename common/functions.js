@@ -28,9 +28,10 @@ module.exports = {
      * @param {string} projectName
      * @param {string} branchName
      * @param {string} repositoryName
+     * @param {string} pluginName
      * @return {boolean}
      */
-    cloneProject: function(el, projectName, branchName, repositoryName) {
+    cloneProject: function(el, projectName, branchName, repositoryName, pluginName) {
         console.log(yosay(`${chalk.yellow('Step 1:')} Now we are clonning ${chalk.green(projectName)} from GitHub...`));
         el.spawnCommandSync(
             'git',
@@ -38,25 +39,9 @@ module.exports = {
                 'clone',
                 '-b',
                 branchName,
-                repositoryName
+                repositoryName,
+                pluginName
             ]
-        );
-        return true;
-    },
-
-    /**
-     * This function renames plugins directory
-     *
-     * @return {boolean}
-     */
-    renamePluginDirectory: function(oldName, newName) {
-        console.log(yosay(`${chalk.yellow('Step 2:')} Renaming plugin directory...`));
-        fs.rename(
-            oldName,
-            newName,
-            function (err) {
-                if (err) throw err;
-            }
         );
         return true;
     },

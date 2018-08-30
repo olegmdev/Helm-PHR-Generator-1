@@ -36,7 +36,8 @@ module.exports = class extends Generator {
         this,
         'HelmPHR-theme plugin',
         'master',
-        'https://github.com/PulseTile-Plugins/Plugin-Helm-PHR-Theme'
+        'https://github.com/PulseTile-Plugins/Plugin-Helm-PHR-Theme',
+        'Plugin-Helm-PHR-Theme'
       );
 
       functions.relocateContent();

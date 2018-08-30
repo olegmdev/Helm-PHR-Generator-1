@@ -29,11 +29,7 @@ module.exports = class extends Generator {
         this,
         'Vaccinations plugin',
         'master',
-        'https://github.com/PulseTile-Plugins/Silver-Plugin-Vaccinations'
-      );
-
-      commonFunctions.renamePluginDirectory(
-        'Silver-Plugin-Vaccinations',
+        'https://github.com/PulseTile-Plugins/Silver-Plugin-Vaccinations',
         'Vaccinations'
       );
 
