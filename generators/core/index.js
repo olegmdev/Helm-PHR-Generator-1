@@ -40,7 +40,8 @@ module.exports = class extends Generator {
         this,
         'PulseTile-Core',
         'develop',
-        'https://github.com/PulseTile/PulseTile-React-Core'
+        'https://github.com/PulseTile/PulseTile-React-Core',
+        'PulseTile-React-Core'
       );
 
       functions.updateNpmModules(this);
