@@ -48,5 +48,6 @@ export const themeConfigs = {
   },
   panelsToHide: {
     'medications': ['history', 'prescription', 'warnings'],
-  }
+  },
+  corePluginsToHide: ['contacts'],
 };

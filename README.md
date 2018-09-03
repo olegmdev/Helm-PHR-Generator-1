@@ -71,7 +71,7 @@ You can check current version by:
 Install Yeoman tool at you local machine if it is absent there:
 ```
     $ npm install -g yo
-    $ npm install -g helm-phr
+    $ npm install -g generator-helm-phr
 ```
 
 Go to the directory, where you will create your build, for example:
