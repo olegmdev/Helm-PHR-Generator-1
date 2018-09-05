@@ -9,7 +9,7 @@ export const themeConfigs = {
     isLeedsPHRHeaderList: true,
     headerHasSearch: false,
     footerHasShowSupportedByText: false,
-    footerCopyright: 'Copyright 2017 Ripple Foundation CIC Ltd. All rights reserved',
+    footerCopyright: 'Copyright 2018 Ripple Foundation CIC Ltd. All rights reserved',
     isShowPluginsBigBanner: true,
     patientsSummaryPageName: 'Home',
     patientsSummaryHasPreviewSettings: true,
