@@ -5,7 +5,7 @@ const fs = require('fs');
 const fsExtra = require('fs-extra');
 const rimraf = require('rimraf');
 
-const pluginsInfo = require('./pluginsInfo');
+const pluginsInfo = require('../../common/pluginsInfo');
 const commonFunctions = require('../../common/functions');
 
 module.exports = {

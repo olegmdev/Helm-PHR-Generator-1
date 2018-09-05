@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "chalk": "^2.1.0",
+    "fs-extra": "^7.0.0",
     "rmdir": "^1.2.0",
     "yeoman-generator": "^2.0.1",
     "yosay": "^2.0.1"

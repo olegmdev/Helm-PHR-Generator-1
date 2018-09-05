@@ -4,6 +4,7 @@ const chalk = require('chalk');
 const yosay = require('yosay');
 
 const commonFunctions = require('../../common/functions');
+const functions = require('./functions');
 
 module.exports = class extends Generator {
 
