@@ -12,7 +12,8 @@ Current version of **Helm-PHR generator** includes four sub-generators:
 1) Core sub-generator (_yo helm-phr:core_);
 2) Silver plugin TopThreeThings sub-generator (_yo helm-phr:plugin-top-three-things_);
 3) Silver plugin Vaccinations sub-generator (_yo helm-phr:plugin-vaccinations_);
-4) Plugin HelmPHR-theme sub-generator (_yo helm-phr:plugin-helm-phr_).
+4) Silver plugin Feeds sub-generator (_yo helm-phr:plugin-feeds_);
+5) Plugin HelmPHR-theme sub-generator (_yo helm-phr:plugin-helm-phr_).
 
 # Core
 
@@ -27,8 +28,7 @@ If any errors occur during generator work you should remove project directory an
 
 This sub-generator does the following automatically:
 1) Clone silver TopThreeThings plugin from GitHub to **plugins/** directory in the project;
-2) Rename download directory to **TopThreeThings/**;
-3) Update config files unite Core with plugin.
+2) Update config files unite Core with plugin.
  
 If any errors occur during generator work you should remove **TopThreeThings/** directory and repeat generator command.
 
@@ -36,10 +36,18 @@ If any errors occur during generator work you should remove **TopThreeThings/** 
 
 This sub-generator does the following automatically:
 1) Clone silver Vaccinations plugin from GitHub to **plugins/** directory in the project;
-2) Rename download directory to **Vaccinations/**;
-3) Update config files unite Core with plugin.
+2) Update config files unite Core with plugin.
  
 If any errors occur during generator work you should remove **Vaccinations/** directory and repeat generator command.
+
+# Silver plugin Feeds
+
+This sub-generator does the following automatically:
+1) Clone silver Vaccinations plugin from GitHub to **plugins/** directory in the project;
+2) Replace files from **replace/** directory to the required paths in the Core;
+3) Update config files unite Core with plugin.
+
+If any errors occur during generator work you should remove **Feeds/** directory and repeat generator command.
 
 # Plugin for HelmPHR-theme
 
@@ -84,6 +92,7 @@ Use Yeoman-generator to create your build automatically:
     $ yo helm-phr:core
     $ yo helm-phr:plugin-top-three-things --force
     $ yo helm-phr:plugin-vaccinations --force
+    $ yo helm-phr:plugin-feeds --force
     $ yo helm-phr:plugin-helm-phr --force
 ```
 
