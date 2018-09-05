@@ -47,6 +47,7 @@ export const themeConfigs = {
       'medications': ['create', 'edit', 'cancel', 'suspend', 'order'],
       'allergies': ['create', 'edit'],
       'vaccinations': ['create', 'edit'],
+      'feeds': ['create', 'edit'],
     },
     panelsToHide: {
       'medications': ['history', 'prescription', 'warnings'],
