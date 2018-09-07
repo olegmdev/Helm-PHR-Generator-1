@@ -18,11 +18,11 @@ export const themeConfigs = {
       'patients-summary': true,
       'diagnoses': true,
       'medications': true,
-      'allergies': true,
-      'contacts': true,
       'vaccinations': true,
+      'allergies': true,
       'topThreeThings': true,
-      'feeds': true
+      'contacts': false,
+      'feeds': false
     },
     dashboardBeing: {},
     isShowUserPhoto: false,
@@ -41,6 +41,7 @@ export const themeConfigs = {
       'allergies': ['causeCode', 'causeTerminology'],
       'diagnoses': ['terminology', 'code'],
       'medications': ['doseTiming', 'doseAmount'],
+      'vaccinations': ['series'],
     },
     buttonsToHide: {
       'diagnoses': ['create', 'edit'],
