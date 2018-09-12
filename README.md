@@ -60,6 +60,14 @@ This sub-generator does the following automatically:
  
 If any errors occur during generator work you should remove project directory and repeat generator command.
 
+# Plugin UserTour
+
+This sub-generator does the following automatically:
+1) Clone UserTour plugin from GitHub to **plugins/** directory in the project;
+2) Overwrite **UserTour/** directory in **src/components/containers**;
+
+If any errors occur during generator work you should remove project directory and repeat generator command.
+
 # Environment
 
 Before installing the Generator, you will need the following:
@@ -94,6 +102,7 @@ Use Yeoman-generator to create your build automatically:
     $ yo helm-phr:plugin-vaccinations --force
     $ yo helm-phr:plugin-feeds --force
     $ yo helm-phr:plugin-helm-phr --force
+    $ yo helm-phr:plugin-user-tour
 ```
 
 Attribute **--force** is used for overwriting config files by default.
