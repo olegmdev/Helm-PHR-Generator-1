@@ -34,7 +34,7 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    try {
+    try { 
 
       commonFunctions.cloneProject(
         this,

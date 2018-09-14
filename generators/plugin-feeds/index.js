@@ -17,7 +17,7 @@ module.exports = class extends Generator {
       default: true
     }];
 
-    return this.prompt(prompts).then(props => {
+    return this.prompt(prompts).then(props => { 
       this.props = props;
     });
   }

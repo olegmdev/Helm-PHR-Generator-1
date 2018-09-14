@@ -1,14 +1,21 @@
 import { get } from 'lodash';
 import { themeConfigs } from '../../../themes.config';
 
-<% for (i = 0; i < plugins.length; i++) { %>
-<% item = plugins[i] %>
-import <%= item.import %> from '<%= item.pluginDirectory %>';
-<% if (item.imageImport && item.imageSource) { %>
-import { <%= item.imageImport %> } from '<%= item.imageSource %>';
-<% } %>
-const <%= item.getTitle %> = get(themeConfigs.patientsSummaryTitles, '<%= item.import %>', '<%= item.title %>');
-<% } %>
+import needle from './../../../assets/images/icn/needle.png' ;
+import trophy from './../../../assets/images/icn/trophy.png' ;
+
+
+import topThreeThings from '../plugins/TopThreeThings/index';
+import { topThreeThingsPrevImage } from '../plugins/TopThreeThings/ImageSource';
+
+const topThreeThingsTitle = get(themeConfigs.patientsSummaryTitles, 'topThreeThings', 'Top Three Things');
+
+
+import vaccinations from '../plugins/Vaccinations/index';
+import { vaccinationsPrevImage } from '../plugins/Vaccinations/ImageSource';
+
+const vaccinationsTitle = get(themeConfigs.patientsSummaryTitles, 'vaccinations', 'Vaccinations');
+
 
 
 /**
@@ -17,10 +24,13 @@ const <%= item.getTitle %> = get(themeConfigs.patientsSummaryTitles, '<%= item.i
  * @return array
  */
 export const themePlugins = [
-<% for (i = 0; i < plugins.length; i++) { %>
-<% item = plugins[i] %>
-    <%= item.url %>,
-<% } %>
+
+
+    topThreeThings,
+
+
+    vaccinations,
+
 ];
 
 /**
@@ -29,15 +39,23 @@ export const themePlugins = [
  * @return array
  */
 export const themePluginsPages = {
-<% for (i = 0; i < plugins.length; i++) { %>
-<% item = plugins[i] %>
-    '<%= item.url %>': {
+
+
+    'topThreeThings': {
             breadcrumbs: [{
-                title: <%= item.getTitle %>,
-                state: '/<%= item.url %>',
+                title: topThreeThingsTitle,
+                state: '/topThreeThings',
             }],
         },
-<% } %>
+
+
+    'vaccinations': {
+            breadcrumbs: [{
+                title: vaccinationsTitle,
+                state: '/vaccinations',
+            }],
+        },
+
 };
 
 /**
@@ -46,30 +64,40 @@ export const themePluginsPages = {
  * @return array
  */
 export const themePatientSummaryConfig = [
-<% for (i = 0; i < plugins.length; i++) { %>
-<% item = plugins[i] %>
-<% if (item.imageImport) { %>
+
     {
-      key: '<%= item.url %>',
-      title: '<%= item.title %>',
-      titleCheckboxes: '<%= item.title %>',
-      state: '<%= item.url %>',
-      nameCheckboxes: '<%= item.url %>',
-      imgPreview: <%= item.imageImport %>,
+      key: 'vaccinations',
+      title: 'Vaccinations',
+      titleCheckboxes: 'Vaccinations',
+      state: 'vaccinations',
+      nameCheckboxes: 'vaccinations',
+      imgPreview: vaccinationsPrevImage,
       isDefaultSelected: true,
+      getImg: needle
     },
-<% } %>
-<% } %>
+
+    {
+      key: 'topThreeThings',
+      title: 'Top Three Things',
+      titleCheckboxes: 'Top Three Things',
+      state: 'topThreeThings',
+      nameCheckboxes: 'topThreeThings',
+      imgPreview: topThreeThingsPrevImage,
+      isDefaultSelected: true,
+      getImg: trophy
+    },
+
 ];
 
 /**
  * This information is necessary for Unit-tests
  */
 export const testStoreContent = {
-<% for (i = 0; i < plugins.length; i++) { %>
-<% item = plugins[i] %>
-<% if (item.forTest) { %>
-    <%= item.forTest %>: {},
-<% } %>
-<% } %>
+
+
+    patientsTopThreeThings: {},
+
+
+    patientsVaccinations: {},
+
 };

@@ -19,10 +19,10 @@ module.exports = {
     const srcPath = '../../..';
     process.chdir(srcPath);
 
-    fsExtra.move('components/theme/plugins/Plugin-Helm-PHR-Theme/assets/images', 'assets/images', { overwrite: true }, function(err) {
+    fsExtra.copy('components/theme/plugins/Plugin-Helm-PHR-Theme/assets/images', 'assets/images', { overwrite: true }, function(err) {
       if (err) throw err;
     });
-    fsExtra.move('components/theme/plugins/Plugin-Helm-PHR-Theme/assets/themes', 'styles/themes', { overwrite: true }, function(err) {
+    fsExtra.copy('components/theme/plugins/Plugin-Helm-PHR-Theme/assets/themes', 'styles/themes', { overwrite: true }, function(err) {
       if (err) throw err;
     });
     return true;
@@ -122,11 +122,11 @@ module.exports = {
    *
    * @return {boolean}
    */
-  removeThemeDirectory: function () {
-    console.log(yosay(`${chalk.yellow('Step 6:')} Removing theme directory...`));
-    rimraf('components/theme/plugins/Plugin-Helm-PHR-Theme', function (err) {
-      if (err) throw err;
-    });
-    return true;
-  }
+  // removeThemeDirectory: function () {
+  //   console.log(yosay(`${chalk.yellow('Step 6:')} Removing theme directory...`));
+  //   rimraf('components/theme/plugins/Plugin-Helm-PHR-Theme', function (err) {
+  //     if (err) throw err;
+  //   });
+  //   return true;
+  // }
 };
